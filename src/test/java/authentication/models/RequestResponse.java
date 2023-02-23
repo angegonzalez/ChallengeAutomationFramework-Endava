@@ -60,13 +60,13 @@ public class RequestResponse {
         }
 
         public RequestResponse build() {
-            RequestResponse patron = new RequestResponse();
-            patron.statusMessage = this.statusMessage;
-            patron.success = this.success;
-            patron.expiresAt = this.expiresAt;
-            patron.requestToken = this.requestToken;
-            patron.statusCode = this.statusCode;
-            return patron;
+            RequestResponse requestResponse = new RequestResponse();
+            requestResponse.statusMessage = this.statusMessage;
+            requestResponse.success = this.success;
+            requestResponse.expiresAt = this.expiresAt;
+            requestResponse.requestToken = this.requestToken;
+            requestResponse.statusCode = this.statusCode;
+            return requestResponse;
         }
     }
 

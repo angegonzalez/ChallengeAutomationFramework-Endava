@@ -1,5 +1,11 @@
 authentication/stepdefs/StepDefinitions.class
-authentication/utils/TestLogger.class
-authentication/models/RequestTokenSuccessfullyResponse.class
+companies/models/RequestResponse.class
+runner/RunCucumberTests.class
+authentication/models/RequestResponse$Builder.class
+companies/stepdefs/StepDefinitions.class
+utils/TestLogger.class
+common/BaseStepsDefinition.class
+authentication/models/RequestResponse.class
 authentication/pages/Authentication.class
-authentication/runners/Runner.class
+companies/models/RequestResponse$Builder.class
+companies/pages/Company.class

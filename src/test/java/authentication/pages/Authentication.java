@@ -1,7 +1,7 @@
 package authentication.pages;
 
 import authentication.models.RequestResponse;
-import authentication.utils.TestLogger;
+import utils.TestLogger;
 
 public class Authentication {
     private static final TestLogger testLogger = TestLogger.getInstance();

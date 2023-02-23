@@ -2,32 +2,18 @@ package authentication.stepdefs;
 
 import authentication.models.RequestResponse;
 import authentication.pages.Authentication;
-import io.cucumber.java.Before;
+import common.BaseStepsDefinition;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class StepDefinitions {
-    private Authentication authentication;
-    private String APIKey;
+    private final Authentication authentication = new Authentication();
     private RequestResponse response;
-    @Before
-    public void init(){
-        authentication = new Authentication();
-    }
-    @Given("^the user has a valid API key$")
-    public void userHasValidAPIKey(){
-        APIKey = authentication.userGetAPIKey(true);
-    }
-    @Given("^the user has an invalid API key$")
-    public void userHasInvalidAPIKey(){
-        APIKey = authentication.userGetAPIKey(false);
-    }
     @When("^the user do the request with the API key$")
     public void userDoRequestWithAPIKey(){
-        response = authentication.userDoRequest(APIKey);
+        response = authentication.userDoRequest(BaseStepsDefinition.APIKey);
     }
     @Then("request token is successfully created")
     public void requestTokenSuccessfullyCreated(){
@@ -49,7 +35,7 @@ public class StepDefinitions {
     public void fieldIsAValidDate(){
         Assert.assertEquals("validExpirationDate", response.getExpiresAt());
     }
-    @And("field \"status_code\" is {int}")
+    @And("\"status_code\" is {int}")
     public void fieldIsNumber(int number){
         Assert.assertEquals(number, response.getStatusCode());
     }
