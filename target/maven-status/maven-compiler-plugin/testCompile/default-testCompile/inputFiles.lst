@@ -1,9 +1,0 @@
-/Users/angegonzalez/Documents/Programming/AutomationFrameworkChallenge/src/test/java/common/BaseStepsDefinition.java
-/Users/angegonzalez/Documents/Programming/AutomationFrameworkChallenge/src/test/java/utils/TestLogger.java
-/Users/angegonzalez/Documents/Programming/AutomationFrameworkChallenge/src/test/java/authentication/pages/Authentication.java
-/Users/angegonzalez/Documents/Programming/AutomationFrameworkChallenge/src/test/java/companies/pages/Company.java
-/Users/angegonzalez/Documents/Programming/AutomationFrameworkChallenge/src/test/java/authentication/stepdefs/StepDefinitions.java
-/Users/angegonzalez/Documents/Programming/AutomationFrameworkChallenge/src/test/java/companies/models/RequestResponse.java
-/Users/angegonzalez/Documents/Programming/AutomationFrameworkChallenge/src/test/java/runner/RunCucumberTests.java
-/Users/angegonzalez/Documents/Programming/AutomationFrameworkChallenge/src/test/java/companies/stepdefs/StepDefinitions.java
-/Users/angegonzalez/Documents/Programming/AutomationFrameworkChallenge/src/test/java/authentication/models/RequestResponse.java
