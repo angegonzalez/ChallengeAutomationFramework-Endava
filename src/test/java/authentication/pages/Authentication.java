@@ -1,18 +1,29 @@
 package authentication.pages;
 
-import authentication.models.RequestTokenSuccessfullyResponse;
+import authentication.models.RequestResponse;
 import authentication.utils.TestLogger;
 
 public class Authentication {
-    TestLogger testLogger = TestLogger.getInstance();
-    public String userGetAPIKey(){
-        testLogger.logInfo("I'm bringing to you a valid API key for T.M.D");
-        return "This is a valid API key";
+    private static final TestLogger testLogger = TestLogger.getInstance();
+
+    public String userGetAPIKey(boolean isValid) {
+        if (isValid) {
+            testLogger.logInfo("I'm bringing to you a valid API key for T.M.D");
+            return "valid API key";
+        }
+        testLogger.logInfo("I'm bringing to you an invalid API key for T.M.D");
+        return "invalid API key";
     }
 
-    public RequestTokenSuccessfullyResponse userDoRequest( String APIKey ){
+    public RequestResponse userDoRequest(String APIKey) {
         testLogger.logInfo("You're using the TMD API endpoint to create request token...");
-        testLogger.logInfo("You're using the API key: "+ APIKey);
-        return new RequestTokenSuccessfullyResponse(true, "expirationDate", "requestToken");
+        testLogger.logInfo("You're using the API key: " + APIKey);
+        if (APIKey.equalsIgnoreCase("valid API key")) {
+            return new RequestResponse.Builder().setSuccess(true).setExpiresAt("validExpirationDate")
+                                                .setRequestToken("validToken").build();
+        }
+        testLogger.logError("Invalid API key: You must be granted a valid key");
+        return new RequestResponse.Builder().setStatusMessage("Invalid API key: You must be granted a valid key")
+                                            .setSuccess(false).setStatusCode(7).build();
     }
 }
